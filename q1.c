@@ -1,18 +1,18 @@
 #include <stdio.h>
-int fact(int x){ //declaring function 
-    if (x==1){
+
+long long factorial(int n) {
+    if(n == 0)
         return 1;
-    }
-    else{
-        return x*fact(x-1);//recursing the function 
-    }
-        
+    else
+        return n * factorial(n - 1);
 }
-int main (){
-    int num ,factorial ;
-    printf ("Enter the number :");
-    scanf ("%d",&num);
-    factorial =fact(num);// function call 
-    printf("The factorial of %d is %d",num,factorial);
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    printf("Factorial of %d = %lld", num, factorial(num));
+
     return 0;
 }
