@@ -1,31 +1,42 @@
 #include <stdio.h>
-struct student
-{
+struct MarkSheet {
     char name[50];
     int roll;
-    float marks;
-    char class [10];
+    float math;
+    float science;
+    float english;
 };
-int main()
-{
 
-    struct student s;
+int main() {
+    struct MarkSheet student;
 
-    printf("Enter The Information of Students :\n\n");
+    printf("Enter information:\n");
 
-    printf("Enter Name : ");
-    scanf("%[^\n]s",&s.name);
+    printf("Enter name: ");
+    scanf("%[^\n]s",&student.name);
+    // fgets(student.name, sizeof(student.name), stdin);
 
-    printf("Enter Roll No. : ");
-    scanf("%d",&s.roll);
+    printf("Enter roll number: ");
+    scanf("%d", &student.roll);
 
-    printf("Enter marks : ");
-    scanf("%f",&s.marks);
+    printf("Enter marks in Math: ");
+    scanf("%f", &student.math);
 
-    printf("Enter the class :");
-    scanf ("%s",&s.class);
+    printf("Enter marks in Science: ");
+    scanf("%f", &student.science);
 
-    printf("\n\n");
+    printf("Enter marks in English: ");
+    scanf("%f", &student.english);
+
+    printf("Displaying Information:\n");
+    printf("Name: %s\n", student.name);
+    printf("Roll: %d\n", student.roll);
+    printf("Marks in Math: %.2f\n", student.math);
+    printf("Marks in Science: %.2f\n", student.science);
+    printf("Marks in English: %.2f\n", student.english);
+
+    return 0;
+}
 
 
     printf("\nDisplaying Information\n");
